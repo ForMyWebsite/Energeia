@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energiea - About Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0fdf0; /* Very light green */
+            color: #333;
+        }
+
+        header {
+            position: relative;
+            background-image: url('Abou.png');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(59, 62, 59, 0.6);
+            z-index: 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            z-index: 1;
+            position: relative;
+        }
+
+        header p {
+            margin: 10px 0 0;
+            font-size: 1.5rem;
+            z-index: 1;
+            position: relative;
+        }
+
+        nav {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 2;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            padding: 2rem;
+            margin: 1rem auto;
+            max-width: 1200px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #008000;
+        }
+
+        .employee-of-the-month {
+            background-color: #fffbea;
+            border: 4px solid gold;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .employee-of-the-month img {
+            width: 75%;
+            height: 285px; /* Adjust height to your preference */
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .employee-of-the-month:hover .bubble {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .bubble {
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%) scale(0.8);
+            background-color: #008000;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            text-align: center;
+            opacity: 0;
+            transition: all 0.3s ease-in-out;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .employee-of-the-month h3 {
+            font-size: 2.5rem; /* Make Samantha Lee's name bigger */
+            font-family: 'Pacifico', cursive; /* Cool font */
+            font-style: italic;
+            margin: 10px 0;
+        }
+
+        .employee-of-the-month p {
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+        .employee-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .employee {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            flex: 1 1 calc(33.333% - 20px);
+            max-width: calc(33.333% - 20px);
+            position: relative;
+        }
+
+        .employee img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+
+        .employee:hover .bubble {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .review {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .review h4 {
+            margin: 0;
+            color: #008000;
+        }
+
+        .stars {
+            margin-top: 5px;
+            color: gold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #333;
+            color: white;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .carousel {
+            display: flex;
+            gap: 20px;
+            overflow-x: scroll;
+            padding: 10px 0;
+        }
+
+        .customer-portrait {
+            flex: 0 0 300px;
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .customer-portrait img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .customer-portrait h3 {
+            margin: 10px 0;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div><a href="Homepage.html">Energiea</a></div>
+            <div>
+                <a href="Household.html">Track Appliances</a>
+                <a href="About Us.html">About Us</a>
+                <a href="Sustainability.html">Sustainability</a>
+                <a href="Impact.html">Impact</a>
+                <a href="How.html">Technique</a>
+                <a href="Contact.html">Contact Us</a>
+                <a href="Resources.html">Resources</a>
+            </div>
+        </nav>
+        <h1>About Energiea</h1>
+        <p>Our Story, Mission, and People</p>
+    </header>
+
+    <section>
+        <h2>Employee of the Month</h2>
+        <div class="employee-of-the-month">
+            <img src="Month.png" alt="Employee of the Month">
+            <h3>Samantha Lee</h3>
+            <p>Position: Lead Sustainability Analyst. Samantha successfully implemented a new energy-saving strategy for community outreach.</p>
+            <div class="bubble">Great Work!</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Our Team</h2>
+        <div class="employee-section">
+            <div class="employee">
+                <img src="Sus.png" alt="Employee 1">
+                <h3>Dr. Sarah Green</h3>
+                <p>Position: Sustainability Expert</p>
+                <div class="bubble">Team Lead!</div>
+            </div>
+            <div class="employee">
+                <img src="Tech.png" alt="Employee 2">
+                <h3>John Miller</h3>
+                <p>Position: Technology Lead</p>
+                <div class="bubble">Innovator!</div>
+            </div>
+            <div class="employee">
+                <img src="Com.png" alt="Employee 3">
+                <h3>Amy Roberts</h3>
+                <p>Position: Community Outreach</p>
+                <div class="bubble">Connector!</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section>
+        <h2>Customer Reviews</h2>
+        <div class="review">
+            <h4>James L.</h4>
+            <div class="stars">★★★★☆</div>
+            <p>"Energiea has helped me save energy at home. Practical and easy to follow tips."</p>
+        </div>
+        <div class="review">
+            <h4>Maria P.</h4>
+            <div class="stars">★★★★★</div>
+            <p>"Inspirational and effective. I’ve already implemented so many eco-friendly changes."</p>
+        </div>
+    </section>
+
+    <!-- Customers Section (Carousel) -->
+    <section>
+        <h2>Our Customers</h2>
+        <div class="carousel">
+            <div class="customer-portrait">
+                <img src="Teach.png" alt="Customer 1">
+                <h3>Laura H.</h3>
+                <p>Age: 35 | Teacher</p>
+                <p>Interests: DIY, Eco-friendly projects.</p>
+            </div>
+            <div class="customer-portrait">
+                <img src="Eng.png" alt="Customer 2">
+                <h3>Tom B.</h3>
+                <p>Age: 42 | Engineer</p>
+                <p>Interests: Smart homes, Green energy.</p>
+            </div>
+            <div class="customer-portrait">
+                <img src="Des.png" alt="Customer 3">
+                <h3>Emily R.</h3>
+                <p>Age: 29 | Designer</p>
+                <p>Interests: Minimalism, Sustainability.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Energiea. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>

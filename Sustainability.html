@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustainability - Energiea</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0fdf0; /* Light green background */
+            color: #333;
+        }
+
+        header {
+            position: relative;
+            background-image: url('sust.png');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(52, 60, 52, 0.6);
+            z-index: 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            z-index: 1;
+            position: relative;
+        }
+
+        header p {
+            margin: 10px 0 0;
+            font-size: 1.5rem;
+            z-index: 1;
+            position: relative;
+        }
+
+        nav {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 2;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            padding: 2rem;
+            margin: 1rem auto;
+            max-width: 1200px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #008000;
+        }
+
+        .sustainability-feature {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .sustainability-feature img {
+            width: 150px;
+            height: 150px;
+            margin-right: 20px;
+            border-radius: 8px;
+        }
+
+        .sustainability-feature div {
+            flex: 1;
+        }
+
+        .sustainability-feature h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #008000;
+        }
+
+        .sustainability-feature p {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #333;
+            color: white;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        /* Hover Effect */
+        .sustainability-feature:hover img {
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div><a href="Homepage.html">Energiea</a></div>
+            <div>
+                <a href="Household.html">Track Appliances</a>
+                <a href="About Us.html">About Us</a>
+                <a href="Sustainability.html">Sustainability</a>
+                <a href="Impact.html">Impact</a>
+                <a href="How.html">Technique</a>
+                <a href="Contact.html">Contact Us</a>
+                <a href="Resources.html">Resources</a>
+            </div>
+        </nav>
+        <h1>Sustainability</h1>
+        <p>Making the Earth a Better Place, One Step at a Time</p>
+    </header>
+
+    <section>
+        <h2>Our Contribution to Sustainability</h2>
+        <div>
+            <p>At Energiea, sustainability is one of the main reasons that it is here today. We believe in creating solutions that not only help you save money but also make the Earth a cleaner, greener, and more sustainable place. This really does help the planet as we courage energy efficiency. We also the support the global goal of Affordable and Clean Energy. Not only that we are helping climate change by lowering green house gas emission. As well as helping the environment and reducing landfills. We let less water go to waste. </p>
+        </div>
+    </section>
+
+    <section>
+        <h2>How We Improve Sustainability</h2>
+        <div class="sustainability-feature">
+            <img src="real.png" alt="Real-Time Monitoring">
+            <div>
+                <h3>Real-Time Energy Monitoring</h3>
+                <p>We give you real-time insights into your energy usage, helping you identify wastage and optimize your consumption. By reducing unnecessary energy use, you can lower your carbon footprint while saving money.</p>
+            </div>
+        </div>
+
+        <div class="sustainability-feature">
+            <img src="energ.png" alt="Energy Saving Tips">
+            <div>
+                <h3>Energy-Saving Tips</h3>
+                <p>We provide personalized tips and recommendations to help you use energy more efficiently. There are 3 times of day Peak, Super Peak, and Off-Peak. Super Peak is when they are most expensive whereas Off Peak is when they are chapest. From suggesting the best times to use appliances to providing seasonal advice, we empower you to make smarter energy choices.</p>
+            </div>
+        </div>
+
+        <div class="sustainability-feature">
+            <img src="edu.png" alt="Educating Kids">
+            <div>
+                <h3>Educating the Next Generation</h3>
+                <p>Through our interactive and educational resources, we teach children about the importance of sustainability. By fostering awareness and understanding from an early age, we aim to create a more environmentally conscious future generation.</p>
+            </div>
+        </div>
+
+        <div class="sustainability-feature">
+            <img src="Par.png" alt="Partnering with Communities">
+            <div>
+                <h3>Partnering with Communities</h3>
+                <p>We work with local communities and organizations to promote sustainable practices, from organizing tree planting initiatives to supporting renewable energy adoption in households and businesses. For example we are trying to work with local communities like PECO. Which is the energy distributor.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Energiea. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>

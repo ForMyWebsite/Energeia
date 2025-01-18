@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impact - Energiea</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0fdf0; /* Light green background */
+            color: #333;
+        }
+
+        header {
+            position: relative;
+            background-image: url('M.png');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(59, 62, 59, 0.6);
+            z-index: 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            z-index: 1;
+            position: relative;
+        }
+
+        header p {
+            margin: 10px 0 0;
+            font-size: 1.5rem;
+            z-index: 1;
+            position: relative;
+        }
+
+        nav {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 2;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            padding: 2rem;
+            margin: 1rem auto;
+            max-width: 1200px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #008000;
+        }
+
+        .section-content {
+            margin-top: 1rem;
+        }
+
+        .tip-card {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .tip-card h3 {
+            margin: 0;
+            color: #008000;
+        }
+
+        .tip-card p {
+            margin-top: 10px;
+        }
+
+        .impact-section {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .impact-item {
+            background-color: #e9f9e9;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            flex: 1 1 calc(33.333% - 20px);
+            max-width: calc(33.333% - 20px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .impact-item img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+
+        .impact-item:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .impact-item h3 {
+            font-size: 1.5rem;
+            color: #008000;
+            margin-top: 1rem;
+        }
+
+        .impact-item p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #333;
+            color: white;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div><a href="Homepage.html">Energiea</a></div>
+            <div>
+                <a href="Household.html">Track Appliances</a>
+                <a href="About Us.html">About Us</a>
+                <a href="Sustainability.html">Sustainability</a>
+                <a href="Impact.html">Impact</a>
+                <a href="How.html">Technique</a>
+                <a href="Contact.html">Contact Us</a>
+                <a href="Resources.html">Resources</a>
+            </div>
+        </nav>
+        <h1>Our Impact</h1>
+        <p>Helping You Save Money, Save Energy, and Make the Earth a Better Place</p>
+    </header>
+
+    <section>
+        <h2>Empowering Sustainability in Every Home</h2>
+        <div class="section-content">
+            <p>At Energiea, we believe that making the world more sustainable starts at home. Our platform is designed to help
+                you monitor and reduce your energy consumption in real-time, save money, and contribute to a greener planet.</p>
+            <p>By tracking your household energy usage, we make it easier to identify small changes that can have a significant
+                impact. Whether it's detecting if you accidentally left a light on or offering tips on the best times to use
+                your appliances, Energiea is here to help you make the most of your resources while reducing your environmental
+                footprint.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>How We Help You Save</h2>
+        <div class="impact-section">
+            <div class="impact-item">
+                <img src="Sav.png" alt="Save Money">
+                <h3>Save Money</h3>
+                <p>Track your energy usage in real-time, get insights on how to reduce costs, and ensure you're only using energy
+                    when needed.</p>
+            </div>
+            <div class="impact-item">
+                <img src="Ene.png" alt="Save Energy">
+                <h3>Save Energy</h3>
+                <p>Receive personalized tips to optimize energy consumption, from turning off unused appliances to adjusting your
+                    daily routines.</p>
+            </div>
+            <div class="impact-item">
+                <img src="Ear.png" alt="Save Earth">
+                <h3>Make the Earth Better</h3>
+                <p>By reducing your energy consumption, you're helping to reduce your carbon footprint, which in turn contributes
+                    to a more sustainable planet for future generations.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Teaching the Next Generation</h2>
+        <div class="section-content">
+            <p>We believe in the power of education. That's why we’ve created a section of our platform dedicated to teaching kids
+                the importance of energy conservation and sustainability. Our interactive tools and activities make it fun and
+                easy for young minds to understand the impact of their actions on the planet.</p>
+            <p>Through our program, children will learn about energy usage, why it's important to save resources, and how they can
+                make a difference. It's all about building a sustainable future, one child at a time.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Energy Tips</h2>
+        <div class="tip-card">
+            <h3>Use Appliances During Off-Peak Hours</h3>
+            <p>Try running your washing machine or dishwasher in the evening when electricity demand is lower. This can help save
+                energy and money.</p>
+        </div>
+        <div class="tip-card">
+            <h3>Turn Off Lights When Not in Use</h3>
+            <p>Get into the habit of switching off lights when you leave a room. It might seem small, but it adds up over time!</p>
+        </div>
+        <div class="tip-card">
+            <h3>Unplug Devices</h3>
+            <p>Many electronics consume power even when turned off. Unplugging devices when you're not using them can save energy
+                and reduce your bill.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Energiea. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>

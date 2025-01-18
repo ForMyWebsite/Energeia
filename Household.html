@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Appliances - Energiea</title>
+    <style>
+        /* Styling remains the same */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            position: relative;
+            background-image: url('B.png');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(58, 64, 58, 0.6); /* Green overlay */
+            z-index: 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            z-index: 1;
+            position: relative;
+        }
+
+        nav {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.5); /* Black overlay for readability */
+            z-index: 2;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            position: relative;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: white;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav a.active {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        nav a.active::after {
+            width: 100%;
+        }
+
+        .appliance-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .appliance-container h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #008000;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        table th, table td {
+            border: 1px solid #ccc;
+            padding: 0.8rem;
+            text-align: center;
+        }
+
+        table th {
+            background-color: #008000;
+            color: white;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #008000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            background-color: #005f00;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #333;
+            color: white;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .add-appliance-form {
+            margin: 2rem auto;
+            padding: 1rem;
+            max-width: 500px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .add-appliance-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .add-appliance-form input,
+        .add-appliance-form button {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .add-appliance-form button {
+            background-color: #008000;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .add-appliance-form button:hover {
+            background-color: #005f00;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div><a href="Homepage.html">Energiea</a></div>
+            <div>
+                <a href="Household.html" class="active">Track Appliances</a>
+                <a href="About Us.html">About Us</a>
+                <a href="Sustainability.html">Sustainability</a>
+                <a href="Impact.html">Impact</a>
+                <a href="How.html">Technique</a>
+                <a href="Contact.html">Contact Us</a>  
+                <a href="Resources.html">Resources</a>
+
+              </div>
+        </nav>
+        <h1>Track Your Appliances</h1>
+        <p>Monitor your energy usage in real-time.</p>
+    </header>
+
+    <section class="appliance-container">
+        <h2>Your Household Appliances</h2>
+        <table id="applianceTable">
+            <thead>
+                <tr>
+                    <th>Appliance</th>
+                    <th>Running Time</th>
+                    <th>Energy Usage (Watts)</th>
+                    <th>Cost ($)</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="applianceList">
+                <!-- Pre-existing appliances will be populated here -->
+            </tbody>
+        </table>
+        <button class="btn" onclick="showAddApplianceForm()">Add Appliance</button>
+    </section>
+
+    <section class="add-appliance-form">
+        <h3>Add New Appliance</h3>
+        <form id="applianceForm" onsubmit="addAppliance(event)">
+            <label for="applianceName">Appliance Name</label>
+            <input type="text" id="applianceName" required>
+            <label for="applianceType">Appliance Type</label>
+            <input type="text" id="applianceType" required>
+            <button type="submit">Add Appliance</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Energiea. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Predefined appliances data with wattage and cost per hour
+        const applianceData = {
+            "Washing Machine": { powerUsage: 500, costPerHour: 0.10 },
+            "Refrigerator": { powerUsage: 100, costPerHour: 0.02 },
+            "Dishwasher": { powerUsage: 1500, costPerHour: 0.25 },
+            "Air Conditioner": { powerUsage: 2000, costPerHour: 0.30 },
+            "TV": { powerUsage: 100, costPerHour: 0.05 }
+        };
+
+        let applianceList = [];
+
+        // Initialize predefined appliances with specific start times
+        function initializeAppliances() {
+            // Simulating appliances that have been running for a while
+            const now = new Date();
+
+            applianceList.push({
+                name: "Washing Machine",
+                type: "Laundry",
+                startTime: new Date(now.getTime() - 2 * 60 * 60 * 1000), // Started 2 hours ago
+                endTime: null,
+                powerUsage: applianceData["Washing Machine"].powerUsage,
+                costPerHour: applianceData["Washing Machine"].costPerHour
+            });
+
+            applianceList.push({
+                name: "Refrigerator",
+                type: "Kitchen",
+                startTime: new Date(now.getTime() - 1 * 60 * 60 * 1000), // Started 1 hour ago
+                endTime: null,
+                powerUsage: applianceData["Refrigerator"].powerUsage,
+                costPerHour: applianceData["Refrigerator"].costPerHour
+            });
+
+            applianceList.push({
+                name: "Dishwasher",
+                type: "Kitchen",
+                startTime: new Date(now.getTime() - 3 * 60 * 60 * 1000), // Started 3 hours ago
+                endTime: null,
+                powerUsage: applianceData["Dishwasher"].powerUsage,
+                costPerHour: applianceData["Dishwasher"].costPerHour
+            });
+
+            displayAppliances();
+        }
+
+        // Display appliances in the table
+        function displayAppliances() {
+            const applianceTable = document.getElementById('applianceList');
+            applianceTable.innerHTML = '';
+
+            applianceList.forEach((appliance, index) => {
+                const row = document.createElement('tr');
+                const timeElapsed = appliance.endTime ? (appliance.endTime - appliance.startTime) / 60000 : (new Date() - appliance.startTime) / 60000;
+                const energyUsage = (appliance.powerUsage * timeElapsed) / 60;
+                const cost = (appliance.costPerHour * timeElapsed) / 60;
+
+                row.innerHTML = `
+                    <td>${appliance.name} (${appliance.type})</td>
+                    <td>${formatTime(new Date(appliance.startTime))} - ${appliance.endTime ? formatTime(new Date(appliance.endTime)) : "Running"}</td>
+                    <td>${energyUsage.toFixed(2)} kWh</td>
+                    <td>$${cost.toFixed(2)}</td>
+                    <td>${appliance.endTime ? "Turned Off" : "Running"}</td>
+                    <td>
+                        <button class="btn" onclick="turnOff(${index})">${appliance.endTime ? "Re-Start" : "Turn Off"}</button>
+                    </td>
+                `;
+                applianceTable.appendChild(row);
+            });
+        }
+
+        // Format time to HH:MM AM/PM
+        function formatTime(time) {
+            return time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        }
+
+        // Turn off an appliance
+        function turnOff(index) {
+            const appliance = applianceList[index];
+            appliance.endTime = new Date();
+            displayAppliances();
+        }
+
+        // Show form to add new appliance
+        function showAddApplianceForm() {
+            document.querySelector(".add-appliance-form").style.display = 'block';
+        }
+
+        // Add a new appliance to the list
+        function addAppliance(event) {
+            event.preventDefault();
+
+            const applianceName = document.getElementById('applianceName').value;
+            const applianceType = document.getElementById('applianceType').value;
+
+            if (applianceName && applianceType) {
+                const newAppliance = {
+                    name: applianceName,
+                    type: applianceType,
+                    startTime: new Date(),
+                    endTime: null,
+                    powerUsage: applianceData[applianceName]?.powerUsage || 0,
+                    costPerHour: applianceData[applianceName]?.costPerHour || 0
+                };
+
+                applianceList.push(newAppliance);
+                document.getElementById('applianceForm').reset();
+                document.querySelector(".add-appliance-form").style.display = 'none';
+                displayAppliances();
+            }
+        }
+
+        // Initialize appliances on page load
+        window.onload = initializeAppliances;
+        // Turn off or re-start an appliance
+function turnOff(index) {
+    const appliance = applianceList[index];
+
+    if (appliance.endTime) {
+        // If the appliance is turned off, re-start it
+        appliance.startTime = new Date();
+        appliance.endTime = null; // Clear the end time
+    } else {
+        // Turn off the appliance
+        appliance.endTime = new Date();
+    }
+
+    displayAppliances();
+}
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works - Energiea</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0fdf0; /* Light green background */
+            color: #333;
+        }
+
+        header {
+            position: relative;
+            background-image: url('F.png');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(63, 70, 63, 0.6);
+            z-index: 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            z-index: 1;
+            position: relative;
+        }
+
+        header p {
+            margin: 10px 0 0;
+            font-size: 1.5rem;
+            z-index: 1;
+            position: relative;
+        }
+
+        nav {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 2;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            padding: 2rem;
+            margin: 1rem auto;
+            max-width: 1200px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #008000;
+        }
+
+        .process-step {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .process-step img {
+            width: 150px; /* Increased width */
+            height: 150px; /* Increased height */
+            margin-right: 20px;
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for better appearance */
+            object-fit: cover; /* Ensure image scales properly */
+        }
+
+        .process-step div {
+            flex: 1;
+        }
+
+        .process-step h3 {
+            margin: 0;
+            font-size: 1.8rem;
+            color: #008000;
+        }
+
+        .process-step p {
+            margin-top: 10px;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #333;
+            color: white;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div><a href="Homepage.html">Energiea</a></div>
+            <div>
+                <a href="Household.html">Track Appliances</a>
+                <a href="About Us.html">About Us</a>
+                <a href="Sustainability.html">Sustainability</a>
+                <a href="Impact.html">Impact</a>
+                <a href="How.html">Technique</a>
+                <a href="Contact.html">Contact Us</a>
+                <a href="Resources.html">Resources</a>
+            </div>
+        </nav>
+        <h1>Technique</h1>
+        <p>Tracking Your Energy Usage, Saving You Money</p>
+    </header>
+
+    <section>
+        <h2>How We Track Your Energy Usage</h2>
+        <div>
+            <p>At Energiea, we aim to make energy conservation easier by giving you a real-time look at your household energy usage. Here's how we do it:</p>
+            <div class="process-step">
+                <img src="utility.png" alt="Step 1">
+                <div>
+                    <h3>Step 1: Connecting Your Utility Provider</h3>
+                    <p>We work with PECO, your energy provider, to seamlessly access your real-time energy data. Once connected, you can instantly start tracking your energy consumption in real time, directly from our platform. We can also connect to the smart meter of the house to get it from there if you don't have PECO. But let's say something isn't working right, or you don't have a smart meter. Well than you can update everything manually.</p>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <img src="Rea.png" alt="Step 2">
+                <div>
+                    <h3>Step 2: Real-Time Data Collection</h3>
+                    <p>Our system syncs with your PECO account to pull detailed data about your energy usage. We gather this information from your smart meters and other devices to give you an accurate and immediate overview of your energy consumption. But again if you don't have it than we use you're smart meter(smart grid) or we just look at it manually. We than have the in built money calculator. This woill tell you since when something has been running and how much energy you have used.</p>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <img src="S.png" alt="Step 3">
+                <div>
+                    <h3>Step 3: Smart Insights and Tips</h3>
+                    <p>Based on the real-time data we receive, we offer you personalized tips and recommendations to help you save energy. For example, we can alert you if you've left an appliance on for too long or suggest the optimal time to run your dishwasher to save electricity. This means that there are three parts of the day, Peak, Super Peak, and Off-Peak. Super peak is when household appliances are most expensive, whereas Off-Peak is when they are cheapest.</p>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <img src="T.png" alt="Step 4">
+                <div>
+                    <h3>Step 4: Teaching the Next Generation</h3>
+                    <p>We believe education is key. Our platform includes interactive sections for teaching children the importance of energy conservation. By using real-world data, we can make learning about sustainability fun and engaging for kids. We would like to incorporate zooms in the future in hopes of educating the future generation of this.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Energiea. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>
